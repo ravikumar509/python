@@ -4,7 +4,7 @@ CLI (Command Line Interface) project to track daily expenses.
 
 ## 📁 Project Structure
 
-
+```
 ├── venv/ # Virtual environment (ignored by Git)
 ├── src/ # Source code directory
 │ ├── data/ # JSON files for balance and transactions
@@ -20,7 +20,7 @@ CLI (Command Line Interface) project to track daily expenses.
 ├── .gitignore # Files/folders to be ignored by Git
 ├── requirements.txt # Project dependencies
 └── README.md # Project documentation
-
+```
 ## 🚀 Getting Started
 
 ### 1. Clone the Repository
