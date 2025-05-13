@@ -1,0 +1,51 @@
+[
+    {
+        "id": "20250513180631686274",
+        "expense_type": "income",
+        "amount": 10000.0,
+        "category": "SALARY",
+        "date": "2025-05-13"
+    },
+    {
+        "id": "20250513181134931628",
+        "expense_type": "income",
+        "amount": 100.0,
+        "category": "BUSINESS",
+        "date": "2025-05-13"
+    },
+    {
+        "id": "20250513181148439851",
+        "expense_type": "income",
+        "amount": 250.0,
+        "category": "FREE LANCING",
+        "date": "2025-05-13"
+    },
+    {
+        "id": "20250513182313518558",
+        "expense_type": "expense",
+        "amount": 200.0,
+        "category": "food",
+        "date": "2025-05-13"
+    },
+    {
+        "id": "20250513185219280208",
+        "expense_type": "income",
+        "amount": 100.0,
+        "category": "BUSINESS",
+        "date": "2025-05-13"
+    },
+    {
+        "id": "20250513193104289017",
+        "expense_type": "income",
+        "amount": 1000.0,
+        "category": "FREE LANCING",
+        "date": "2025-05-13"
+    },
+    {
+        "id": "20250513193420222876",
+        "expense_type": "income",
+        "amount": 2540.0,
+        "category": "SALARY",
+        "date": "2025-05-13"
+    }
+]
