@@ -5,9 +5,21 @@ CLI (Command Line Interface) project to track daily expenses.
 ## 📁 Project Structure
 
 
-<pre> <code> ``` ├── venv/ # Virtual environment (ignored by Git) ├── src/ # Source code directory │ ├── data │ │ ├── balance.json │ │ └── expenses.json │ ├── tracker │ │ ├── Expense.py │ │ └── Tracker.py │ ├── utils │ │ ├── FileOperations.py │ │ └── Tracker.py │ └── main.py ├── .gitignore ├── requirements.txt # Project dependencies └── README.md ``` </code> </pre>
-
-
+├── venv/ # Virtual environment (ignored by Git)
+├── src/ # Source code directory
+│ ├── data/ # JSON files for balance and transactions
+│ │ ├── balance.json
+│ │ └── expenses.json
+│ ├── tracker/ # Business logic for tracking
+│ │ ├── Expense.py # Expense class definition
+│ │ └── Tracker.py # Core tracking logic
+│ ├── utils/ # Utility functions
+│ │ ├── FileOperations.py# Read/write helpers for JSON files
+│ │ └── Tracker.py # (You might want to rename to avoid confusion)
+│ └── main.py # Entry point of the application
+├── .gitignore # Files/folders to be ignored by Git
+├── requirements.txt # Project dependencies
+└── README.md # Project documentation
 
 ## 🚀 Getting Started
 
