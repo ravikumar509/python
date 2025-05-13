@@ -15,7 +15,6 @@ CLI (Command Line Interface) project to track daily expenses.
 │ │ └── Tracker.py # Core tracking logic
 │ ├── utils/ # Utility functions
 │ │ ├── FileOperations.py# Read/write helpers for JSON files
-│ │ └── Tracker.py # (You might want to rename to avoid confusion)
 │ └── main.py # Entry point of the application
 ├── .gitignore # Files/folders to be ignored by Git
 ├── requirements.txt # Project dependencies
