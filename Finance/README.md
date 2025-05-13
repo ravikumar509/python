@@ -4,6 +4,7 @@ CLI (Command Line Interface) project to track daily expenses.
 
 ## 📁 Project Structure
 
+
 ├── venv/ # Virtual environment (ignored by Git)
 ├── src/ # Source code directory
 │ └── data
