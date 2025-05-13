@@ -6,7 +6,6 @@ CLI (Command Line Interface) project to track daily expenses.
 
 ```
 ├── venv/ # Virtual environment (ignored by Git)
-
 ├── src/ # Source code directory
 │ ├── data/ # JSON files for balance and transactions
 │ │ ├── balance.json
