@@ -5,7 +5,7 @@ from utils.FileOperations import FileOperations
 from datetime import datetime
 import json
 class Tracker:
-    menu_list = {"0":"Exit","1":"Income","2":"Expense","3":"Delete Expense","4":"Balance"}
+    menu_list = {"0":"Exit","1":"Income","2":"Expense","3":"Delete Expense","4":"Show All Transactions","5":"balance"}
     balance_value = 0
    
 
@@ -82,7 +82,9 @@ class Tracker:
                     self.expense()
                 case '3' | 'delete' | 'delete expense':
                     self.delete()
-                case '4' | 'balance':
+                case '4' | 'show' | 'show all transactions':
+                    self.show_all_transactions()
+                case '5' | 'balance':
                     self.balance() 
                 case _:
                     print(f"{Fore.RED} Selected Wrong Option {Style.RESET_ALL}")
@@ -191,13 +193,17 @@ class Tracker:
         """
         
         # Show options to the user for type of transaction to delete
-        print(f"{Fore.GREEN} 0 : income\n 1 : expense {Style.RESET_ALL}")
+        print(f"{Fore.GREEN} 0 | q : quit \t1: income\t 2 : expense {Style.RESET_ALL}")
         transaction_type = input(f"{Fore.YELLOW}select either number option/type the option:{Style.RESET_ALL}").lower()
         match transaction_type:
-            case '0' | 'income':
+            case '0' | 'q':
+                sys.exit(0)
+            case '1' | 'income':
                  amount_ = FileOperations().remove_transaction("income")
-            case '1' | 'expense':
-                 amount_ = FileOperations().remove_transaction("expense")
+            case '2' | 'expense':
+                 amount_ = FileOperations().remove_transaction("expense")            
+            case _:
+                self.delete()
         Tracker.balance_value+= amount_
         FileOperations().update_balance(Tracker.balance_value)
 
@@ -224,7 +230,7 @@ class Tracker:
         4. Exits the program if the user selects 0 or 'q'.
         5. If input is invalid, recursively prompts again until a valid choice is made.
         """
-        income_category_details = {"0":"Exit","1":"Salary","2":"Free Lancing","3":"Business"}
+        income_category_details = {"0 | 'q'":"Exit","1":"Salary","2":"Free Lancing","3":"Business"}
         for keys in income_category_details.keys():
             print(f"{Fore.GREEN}{keys} : {income_category_details[keys]}{Style.RESET_ALL}", end="\t")
         category_value = input(f"{Fore.YELLOW}\nselect either number option/type the option:{Style.RESET_ALL}").lower()
@@ -240,6 +246,27 @@ class Tracker:
             case _:
                 income_category =input(f"{Fore.RED} please select proper input{Style.RESET_ALL}")                
                 return income_category()
+            
+    def show_all_transactions(self):
+        """Fetches and displays all transactions from the expenses file"""
+        try:
+            with open(FileOperations.file_path, 'r') as f:
+                data = json.load(f)
+                if not isinstance(data, list) or len(data) == 0:
+                    print(f"{Fore.RED}No transactions found.{Style.RESET_ALL}")
+                    return
+                
+                print(f"{Fore.GREEN}--- All Transactions ---{Style.RESET_ALL}")
+                for transaction in data:
+                    print(f"ID: {transaction['id']}")
+                    print(f"Type: {transaction['expense_type']}")
+                    print(f"Amount: {transaction['amount']}")
+                    print(f"Category: {transaction['category']}")
+                    print(f"Date: {transaction['date']}")
+                    print(f"{Fore.YELLOW}-----------------------------{Style.RESET_ALL}")
+
+        except Exception as e:
+            print(f"{Fore.RED}Error reading transactions: {e}{Style.RESET_ALL}")
 
 
 

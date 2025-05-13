@@ -47,5 +47,26 @@
         "amount": 2540.0,
         "category": "SALARY",
         "date": "2025-05-13"
+    },
+    {
+        "id": "20250513205432694515",
+        "expense_type": "income",
+        "amount": 10000.0,
+        "category": "SALARY",
+        "date": "2025-05-13"
+    },
+    {
+        "id": "20250513205503549611",
+        "expense_type": "expense",
+        "amount": 100.0,
+        "category": "party",
+        "date": "2025-05-13"
+    },
+    {
+        "id": "20250513205904276185",
+        "expense_type": "expense",
+        "amount": 1000.0,
+        "category": "self",
+        "date": "2025-05-13"
     }
 ]
