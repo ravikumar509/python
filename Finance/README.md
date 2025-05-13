@@ -87,3 +87,5 @@ def __init__(self, expense_type, amount, category, date):
 -Purpose:
 -Used to create structured transaction records that can be saved to or read from expense.json.
 
+
+
